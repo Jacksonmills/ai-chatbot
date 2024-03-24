@@ -1,6 +1,5 @@
-import { SidebarItems } from '@/components/sidebar-items'
 import { ThemeToggle } from '@/components/theme-toggle'
-import { cache } from 'react'
+import { SidebarContent } from './sidebar-content'
 
 interface SidebarListProps {
   userId?: string
@@ -11,8 +10,8 @@ export async function SidebarList({}: SidebarListProps) {
   return (
     <div className="flex flex-1 flex-col overflow-hidden">
       <div className="flex-1 overflow-auto">
-        <div className="p-8 text-center">
-          <p className="text-sm text-muted-foreground">No chat history</p>
+        <div className="p-8">
+          <SidebarContent />
         </div>
       </div>
       <div className="flex items-center justify-between p-4">

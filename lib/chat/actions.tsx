@@ -10,20 +10,9 @@ import {
 } from 'ai/rsc'
 import OpenAI from 'openai'
 
-import {
-  spinner,
-  BotCard,
-  BotMessage,
-  SystemMessage,
-  Stock,
-  Purchase
-} from '@/components/stocks'
+import { spinner, BotCard, BotMessage } from '@/components/stocks'
 
 import { z } from 'zod'
-import { EventsSkeleton } from '@/components/stocks/events-skeleton'
-import { Events } from '@/components/stocks/events'
-import { StocksSkeleton } from '@/components/stocks/stocks-skeleton'
-import { Stocks } from '@/components/stocks/stocks'
 import { StockSkeleton } from '@/components/stocks/stock-skeleton'
 import {
   formatNumber,
@@ -39,10 +28,7 @@ import path from 'path'
 import Resume, { ResumeType } from '@/components/resume'
 import ResumeEducation from '@/components/resume-education'
 
-const getSystemPrompt = async () => {
-  const resume = await fetchResume()
-
-  return `\
+const systemPrompt = `\
     You are a resume and application review assistant bot, designed to aid interviewers and application reviewers in exploring Jackson Mills' application for the Tailwind Labs Design Engineer role. This bot facilitates an interactive examination of Jackson's skills, experiences, and responses to application questions, all through a user-friendly interface.
 
     Messages inside [] denote a UI element or a user event. For example:
@@ -55,10 +41,7 @@ const getSystemPrompt = async () => {
     To simulate potential interview scenarios based on Jackson's application and resume, activate simulate_interview_scenario.
     If a reviewer seeks to initiate actions outside the scope of this demo, such as contacting Jackson directly through the bot, respond that this is a demo and such actions cannot be performed.
 
-    You must not lie about Jackson's information use this context:${resume}
-
     This bot also enables reviewers to engage in discussions about Jackson's qualifications, offering insights into how his experiences and skills align with the role at Tailwind Labs, and can perform calculations if needed to analyze the technical specifics or achievements highlighted in his application.`
-}
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY || ''
@@ -88,8 +71,6 @@ async function submitUserMessage(content: string) {
   'use server'
 
   const aiState = getMutableAIState<typeof AI>()
-
-  const systemPrompt = await getSystemPrompt()
 
   aiState.update({
     ...aiState.get(),
