@@ -1,0 +1,88 @@
+{
+  "personal_info": {
+    "name": "Jackson Mills",
+    "role": "Frontend/Fullstack Engineer",
+    "location": "Chicago IL",
+    "contact_number": "708-261-1442",
+    "email": "jacksonemills@gmail.com",
+    "social_links": {
+      "GitHub": "",
+      "LinkedIn": "",
+      "Portfolio": ""
+    }
+  },
+  "personal_work": [
+    {
+      "project_name": "ComboZ",
+      "description": "A web app for Dragon Ball FighterZ enthusiasts, featuring a combo builder and Chrome's PiP API integration for realtime practice.",
+      "repo_link": ""
+    },
+    {
+      "project_name": "Ratioed!",
+      "description": "A Next.js project visualizing Twitter ratios, providing an interactive experience with downloadable, playful PNG cards.",
+      "repo_link": ""
+    },
+    {
+      "project_name": "Oki",
+      "description": "An anonymous, temporary chat application for fighting game tournaments, enhancing live event engagement.",
+      "repo_link": ""
+    },
+    {
+      "project_name": "Armored Core Garage",
+      "description": "An AI-assisted mech building assistant for Armored Core players, leveraging OpenAI's GPT-4 for interactive user guidance.",
+      "repo_link": ""
+    }
+  ],
+  "experience": [
+    {
+      "role": "Frontend Engineer",
+      "company": "SteelSeries",
+      "location": "Chicago IL",
+      "time_period": "Dec 2017 - Present",
+      "responsibilities": [
+        "Developed and maintained an ecommerce website, applying best practices in coding, documentation, and agile workflows to improve site efficiency and user experience.",
+        "Promoted self-teaching and pair-programming, contributing to team growth and better adaptation of emerging technologies.",
+        "Focused on delivering a high-quality user experience and accessibility, working with cross-functional teams to make the website more inclusive and user-friendly.",
+        "Improved website scalability and accessibility compliance by refactoring the frontend codebase and introducing TypeScript."
+      ]
+    },
+    {
+      "role": "Junior Frontend Engineer",
+      "company": "SteelSeries",
+      "location": "Chicago IL",
+      "time_period": "Aug 2016 - Dec 2017",
+      "responsibilities": [
+        "Led the refactoring of the webshop codebase, improving style reusability and streamlining development workflows.",
+        "Advanced frontend capabilities and trained the merch team, enhancing our content management system with Django CMS."
+      ]
+    },
+    {
+      "role": "CMS Content Manager",
+      "company": "SteelSeries",
+      "location": "Chicago IL",
+      "time_period": "Aug 2015 - Aug 2016",
+      "responsibilities": [
+        "Managed product launches and webshop content, playing a key role in making the webshop the top revenue source for the company."
+      ]
+    },
+    {
+      "role": "UI/UX Design Intern",
+      "company": "SteelSeries",
+      "location": "Chicago IL",
+      "time_period": "May 2015 - Aug 2015",
+      "responsibilities": [
+        "Designed web page components and updated assets, developing skills in CSS and HTML that improved website user engagement."
+      ]
+    }
+  ],
+  "education": {
+    "degree": "Bachelor of Arts in Design and Visual Communications",
+    "institution": "Moody Bible Institute",
+    "location": "Chicago IL",
+    "time_period": "August 2010 - May 2014"
+  },
+  "certifications": [
+    "Completed Just JavaScript, CSS for JavaScript Developers and Joy of React courses.",
+    "Audited Harvard's CS50 course (2019)"
+  ]
+}

@@ -1,6 +1,5 @@
 import * as React from 'react'
 
-import { shareChat } from '@/app/actions'
 import { Button } from '@/components/ui/button'
 import { PromptForm } from '@/components/prompt-form'
 import { ButtonScrollToBottom } from '@/components/button-scroll-to-bottom'
@@ -36,24 +35,24 @@ export function ChatPanel({
 
   const exampleMessages = [
     {
-      heading: 'What are the',
-      subheading: 'trending memecoins today?',
-      message: `What are the trending memecoins today?`
+      heading: 'Show me',
+      subheading: 'Jackson Mills’ resume highlights',
+      message: `Can you show me Jackson Mills’ resume highlights?`
     },
     {
-      heading: 'What is the price of',
-      subheading: '$DOGE right now?',
-      message: 'What is the price of $DOGE right now?'
+      heading: 'What are Jackson’s',
+      subheading: 'key projects and technologies used?',
+      message: `What are Jackson Mills’ key projects and the technologies used in them?`
     },
     {
-      heading: 'I would like to buy',
-      subheading: '42 $DOGE',
-      message: `I would like to buy 42 $DOGE`
+      heading: 'I’d like to see Jackson’s response to',
+      subheading: 'application question about Tailwind CSS experience',
+      message: `I’d like to see Jackson’s response to the application question regarding his experience with Tailwind CSS.`
     },
     {
-      heading: 'What are some',
-      subheading: `recent events about $DOGE?`,
-      message: `What are some recent events about $DOGE?`
+      heading: 'Can we simulate',
+      subheading: 'an interview scenario based on Jackson’s skills?',
+      message: `Can we simulate an interview scenario based on Jackson’s skills in React and TypeScript?`
     }
   ]
 
@@ -99,35 +98,6 @@ export function ChatPanel({
               </div>
             ))}
         </div>
-
-        {messages?.length >= 2 ? (
-          <div className="flex h-12 items-center justify-center">
-            <div className="flex space-x-2">
-              {id && title ? (
-                <>
-                  <Button
-                    variant="outline"
-                    onClick={() => setShareDialogOpen(true)}
-                  >
-                    <IconShare className="mr-2" />
-                    Share
-                  </Button>
-                  <ChatShareDialog
-                    open={shareDialogOpen}
-                    onOpenChange={setShareDialogOpen}
-                    onCopy={() => setShareDialogOpen(false)}
-                    shareChat={shareChat}
-                    chat={{
-                      id,
-                      title,
-                      messages: aiState.messages
-                    }}
-                  />
-                </>
-              ) : null}
-            </div>
-          </div>
-        ) : null}
 
         <div className="space-y-4 border-t bg-background px-4 py-2 shadow-lg sm:rounded-t-xl sm:border md:py-4">
           <PromptForm input={input} setInput={setInput} />
