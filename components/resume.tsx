@@ -44,7 +44,7 @@ interface Education {
 
 export default function Resume({ props: resume }: { props: ResumeType }) {
   return (
-    <div className="flex flex-col gap-2 p-4 border bg-card">
+    <div className="flex flex-col gap-2 p-4 border-2 bg-card">
       <h1>Resume</h1>
       <div>
         <h2>{resume.personal_info.name}</h2>

@@ -11,10 +11,11 @@ import { Toaster } from '@/components/ui/sonner'
 export const metadata = {
   metadataBase: new URL(`https://${process.env.VERCEL_URL}`),
   title: {
-    default: 'Next.js AI Chatbot',
-    template: `%s - Next.js AI Chatbot`
+    default: 'Jackson Mills - TailwindCSS Design Engineer Application',
+    template: `%s - TailwindCSS Design Engineer Application`
   },
-  description: 'An AI-powered chatbot template built with Next.js and Vercel.',
+  description:
+    "An AI-powered chatbot template built with Next.js and Vercel. Designed with TailwindCSS. Integrated Generative UI components for Jackson's resume/application questions.",
   icons: {
     icon: '/favicon.ico',
     shortcut: '/favicon-16x16.png',
@@ -35,7 +36,7 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body
         className={cn(
           'font-sans antialiased',
@@ -44,15 +45,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
         )}
       >
         <Toaster position="top-center" />
-        <Providers
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <Providers>
           <div className="flex flex-col min-h-screen">
             <Header />
-            <main className="flex flex-col flex-1 bg-muted/50">{children}</main>
+            <main className="flex flex-col flex-1 bg-background">
+              {children}
+            </main>
           </div>
           <TailwindIndicator />
         </Providers>

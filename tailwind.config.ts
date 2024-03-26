@@ -14,9 +14,12 @@ module.exports = {
       padding: '2rem',
       screens: {
         '2xl': '1400px'
-      }
+      },
     },
     extend: {
+      backgroundImage: {
+        'pattern': 'url("/pattern.svg")'
+      },
       fontFamily: {
         sans: ['var(--font-geist-sans)'],
         mono: ['var(--font-geist-mono)']
@@ -78,4 +81,4 @@ module.exports = {
     }
   },
   plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')]
-}
+};

@@ -5,7 +5,7 @@ import Textarea from 'react-textarea-autosize'
 
 import { useActions, useUIState } from 'ai/rsc'
 
-import { UserMessage } from './stocks/message'
+import { UserMessage } from './message'
 import { type AI } from '@/lib/chat/actions'
 import { Button } from '@/components/ui/button'
 import { IconArrowElbow, IconPlus } from '@/components/ui/icons'
@@ -66,13 +66,13 @@ export function PromptForm({
         setMessages(currentMessages => [...currentMessages, responseMessage])
       }}
     >
-      <div className="relative flex max-h-60 w-full grow flex-col overflow-hidden bg-background px-8 sm:rounded-md sm:border sm:px-12">
+      <div className="relative flex max-h-60 w-full grow flex-col overflow-hidden bg-background px-8 sm:border-b-2 sm:px-12">
         <Tooltip>
           <TooltipTrigger asChild>
             <Button
-              variant="outline"
+              variant="secondary"
               size="icon"
-              className="absolute left-0 top-[14px] size-8 rounded-full bg-background p-0 sm:left-4"
+              className="absolute left-2 top-[14px] size-8 p-0 sm:left-4 rounded-none"
               onClick={() => {
                 router.push('/new')
               }}
@@ -81,7 +81,7 @@ export function PromptForm({
               <span className="sr-only">New Chat</span>
             </Button>
           </TooltipTrigger>
-          <TooltipContent>New Chat</TooltipContent>
+          <TooltipContent className="rounded-none">New Chat</TooltipContent>
         </Tooltip>
         <Textarea
           ref={inputRef}
@@ -98,10 +98,15 @@ export function PromptForm({
           value={input}
           onChange={e => setInput(e.target.value)}
         />
-        <div className="absolute right-0 top-[13px] sm:right-4">
+        <div className="absolute right-2 top-[13px] sm:right-4">
           <Tooltip>
             <TooltipTrigger asChild>
-              <Button type="submit" size="icon" disabled={input === ''}>
+              <Button
+                className="rounded-none"
+                type="submit"
+                size="icon"
+                disabled={input === ''}
+              >
                 <IconArrowElbow />
                 <span className="sr-only">Send message</span>
               </Button>
