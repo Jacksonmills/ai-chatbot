@@ -6,31 +6,30 @@
     "contact_number": "708-261-1442",
     "email": "jacksonemills@gmail.com",
     "social_links": {
-      "GitHub": "",
-      "LinkedIn": "",
-      "Portfolio": ""
+      "GitHub": "https://github.com/Jacksonmills",
+      "LinkedIn": "https://www.linkedin.com/in/jackson-mills-76776a4b/"
     }
   },
   "personal_work": [
     {
       "project_name": "ComboZ",
       "description": "A web app for Dragon Ball FighterZ enthusiasts, featuring a combo builder and Chrome's PiP API integration for realtime practice.",
-      "repo_link": ""
+      "repo_link": "https://github.com/Jacksonmills/dragonrush"
     },
     {
       "project_name": "Ratioed!",
       "description": "A Next.js project visualizing Twitter ratios, providing an interactive experience with downloadable, playful PNG cards.",
-      "repo_link": ""
+      "repo_link": "https://github.com/Jacksonmills/get-ratioed"
     },
     {
       "project_name": "Oki",
       "description": "An anonymous, temporary chat application for fighting game tournaments, enhancing live event engagement.",
-      "repo_link": ""
+      "repo_link": "https://github.com/Jacksonmills/oki"
     },
     {
       "project_name": "Armored Core Garage",
       "description": "An AI-assisted mech building assistant for Armored Core players, leveraging OpenAI's GPT-4 for interactive user guidance.",
-      "repo_link": ""
+      "repo_link": "https://github.com/Jacksonmills/ac-garage"
     }
   ],
   "experience": [

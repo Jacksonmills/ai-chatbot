@@ -56,13 +56,13 @@ export function ChatPanel({
   ]
 
   return (
-    <div className="fixed inset-x-0 bottom-0 w-full duration-300 ease-in-out animate-in peer-[[data-state=open]]:group-[]:lg:pl-[250px] peer-[[data-state=open]]:group-[]:xl:pl-[300px]">
+    <div className="w-full duration-300 ease-in-out animate-in fixed inset-x-0 bottom-0 peer-[[data-state=open]]:group-[]:lg:pl-[250px] peer-[[data-state=open]]:group-[]:xl:pl-[300px]">
       <ButtonScrollToBottom
         isAtBottom={isAtBottom}
         scrollToBottom={scrollToBottom}
       />
 
-      <div className="mx-auto sm:max-w-2xl sm:px-4">
+      <div className="mx-auto sm:max-w-2xl sm:pl-2 sm:pr-6">
         <div className="grid grid-cols-2 border">
           {messages.length === 0 &&
             exampleMessages.map((example, index) => (
@@ -98,7 +98,7 @@ export function ChatPanel({
             ))}
         </div>
 
-        <div className="border-t-0 bg-background shadow-lg border-2">
+        <div className="border-t-0 bg-background border-2">
           <PromptForm input={input} setInput={setInput} />
           <FooterText className="hidden sm:block py-2" />
         </div>

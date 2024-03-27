@@ -21,7 +21,7 @@ export function ButtonScrollToBottom({
     <Button
       size="icon"
       className={cn(
-        'rounded-none absolute right-4 top-1 z-10 bg-accent hover:bg-accent/90 transition-opacity duration-300 sm:right-8 md:top-2',
+        'rounded-none absolute right-[9px] -top-12 z-10 bg-accent hover:bg-accent/90 transition-opacity duration-300 sm:right-8 md:top-2',
         isAtBottom ? 'opacity-0' : 'opacity-100',
         className
       )}

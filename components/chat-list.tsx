@@ -1,6 +1,5 @@
 import { Separator } from '@/components/ui/separator'
 import { UIState } from '@/lib/chat/actions'
-import { Session } from '@/lib/types'
 import Link from 'next/link'
 import { ExclamationTriangleIcon } from '@radix-ui/react-icons'
 
@@ -18,7 +17,9 @@ export function ChatList({ messages }: ChatList) {
       {messages.map((message, index) => (
         <div key={message.id}>
           {message.display}
-          {index < messages.length - 1 && <Separator className="my-4" />}
+          {index < messages.length - 1 && (
+            <Separator className="my-4 h-[2px]" />
+          )}
         </div>
       ))}
     </div>

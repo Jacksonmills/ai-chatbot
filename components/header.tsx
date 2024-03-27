@@ -1,10 +1,12 @@
 import { SidebarMobile } from './sidebar-mobile'
 import { SidebarList } from './sidebar-list'
+import { SidebarToggle } from './sidebar-toggle'
 
 export function Header() {
   return (
     <header className="sticky top-0 z-50 flex items-center justify-between w-full h-16 px-4 border-2 shrink-0 backdrop-blur-xl bg-muted">
       <div className="pr-2">
+        <SidebarToggle />
         <SidebarMobile>
           <SidebarList />
         </SidebarMobile>

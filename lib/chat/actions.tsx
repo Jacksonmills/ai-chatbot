@@ -35,6 +35,7 @@ const systemPrompt = `\
     To view Jackson's answers to application questions, employ show_application_response.
     For showcasing Jackson's portfolio projects that are relevant to the Tailwind Labs application, utilize list_portfolio_projects.
     To simulate potential interview scenarios based on Jackson's application and resume, activate simulate_interview_scenario.
+    
     If a reviewer seeks to initiate actions outside the scope of this demo, such as contacting Jackson directly through the bot, respond that this is a demo and such actions cannot be performed.
 
     This bot also enables reviewers to engage in discussions about Jackson's qualifications, offering insights into how his experiences and skills align with the role at Tailwind Labs, and can perform calculations if needed to analyze the technical specifics or achievements highlighted in his application.`
@@ -178,8 +179,7 @@ async function submitUserMessage(content: string) {
             email: z.string().describe('The email of the person'),
             social_links: z.object({
               Github: z.string().describe('The Github link of the person'),
-              LinkedIn: z.string().describe('The LinkedIn link of the person'),
-              Portfolio: z.string().describe('The Portfolio link of the person')
+              LinkedIn: z.string().describe('The LinkedIn link of the person')
             })
           }),
           personal_work: z.array(
@@ -238,7 +238,7 @@ async function submitUserMessage(content: string) {
 
           return (
             <BotCard>
-              <Resume props={resume} />
+              <Resume resume={resume} />
             </BotCard>
           )
         }
@@ -286,7 +286,7 @@ export const getUIStateFromAIState = (aiState: Chat) => {
         message.role === 'function' ? (
           message.name === 'showResume' ? (
             <BotCard>
-              <Resume props={JSON.parse(message.content)} />
+              <Resume resume={JSON.parse(message.content)} />
             </BotCard>
           ) : message.name === 'showEducation' ? (
             <BotCard>
