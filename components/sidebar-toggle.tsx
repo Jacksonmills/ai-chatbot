@@ -11,8 +11,8 @@ export function SidebarToggle() {
 
   return (
     <Button
-      variant="ghost"
-      className="-ml-2 size-9 p-0 hidden lg:flex"
+      variant="accent"
+      className="hidden size-9 p-0 lg:flex rounded-none border-none h-[40px]"
       onClick={() => {
         toggleSidebar()
       }}

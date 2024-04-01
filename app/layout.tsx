@@ -9,7 +9,6 @@ import { Header } from '@/components/header'
 import { Toaster } from '@/components/ui/sonner'
 
 export const metadata = {
-  metadataBase: new URL(`https://${process.env.VERCEL_URL}`),
   title: {
     default: 'Jackson Mills - TailwindCSS Design Engineer Application',
     template: `%s - TailwindCSS Design Engineer Application`

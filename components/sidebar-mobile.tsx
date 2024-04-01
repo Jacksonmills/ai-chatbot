@@ -21,8 +21,8 @@ export function SidebarMobile({ children }: SidebarMobileProps) {
     <Sheet>
       <SheetTrigger asChild>
         <Button
-          variant="ghost"
-          className="-ml-2 flex size-9 p-0 lg:hidden rounded-none"
+          variant="accent"
+          className="flex size-9 p-0 lg:hidden rounded-none border-none h-[40px]"
         >
           <IconSidebar className="size-6" />
           <span className="sr-only">Toggle Sidebar</span>
@@ -32,7 +32,7 @@ export function SidebarMobile({ children }: SidebarMobileProps) {
         side="left"
         className="inset-y-0 flex h-auto w-[300px] flex-col p-0"
       >
-        <Sidebar className="flex p-2 bg-muted border-2">{children}</Sidebar>
+        <Sidebar className="flex p-2 bg-muted border-r-2">{children}</Sidebar>
       </SheetContent>
     </Sheet>
   )

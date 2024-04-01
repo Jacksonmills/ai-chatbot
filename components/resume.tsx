@@ -1,6 +1,8 @@
 import React from 'react'
 import { Button } from './ui/button'
 import { ArrowTopRightIcon } from '@radix-ui/react-icons'
+import { AspectRatio } from './ui/aspect-ratio'
+import { Skeleton } from './ui/skeleton'
 
 export interface ResumeType {
   personal_info: PersonalInfo
@@ -33,7 +35,7 @@ interface Experience {
   company: string
   location: string
   time_period: string
-  responsibilities: string
+  responsibilities: string[]
 }
 
 interface Education {
@@ -56,66 +58,137 @@ export default function Resume({ resume }: { resume: ResumeType }) {
         </div>
 
         <div className="flex flex-col border-l-2 w-full">
-          <Button className="rounded-none h-full" asChild>
-            <a href={resume.personal_info.social_links.GitHub || ''}>Github</a>
+          <Button className="rounded-none h-full border-none" asChild>
+            <a
+              href={resume.personal_info.social_links.GitHub || ''}
+              target="_blank"
+            >
+              Github
+            </a>
           </Button>
           <Button
-            className="rounded-none border-t-2"
+            className="rounded-none border-t-2 border-b-0 border-x-0"
             variant={'secondary'}
             asChild
           >
-            <a href={resume.personal_info.social_links.LinkedIn || ''}>
+            <a
+              href={resume.personal_info.social_links.LinkedIn || ''}
+              target="_blank"
+            >
               LinkedIn
             </a>
           </Button>
         </div>
       </div>
 
-      <div className="border-b-2 py-px px-4">
-        <h2 className="text-lg font-bold">Work</h2>
-      </div>
+      <Heading>Projects</Heading>
 
-      <div className="border-b-2 p-4 flex flex-col gap-2">
+      <div className="flex flex-col">
         {resume.personal_work.map((work, i) => (
-          <div key={i} className="flex flex-col gap-2">
-            <div className="flex gap-2 items-center">
-              <h3 className="font-bold">{work.project_name}</h3>
-              <Button className="w-fit rounded-none" variant={'ghost'}>
-                <a
-                  href={work.repo_link}
-                  className="flex gap-2 items-center"
-                  target="_blank"
+          <div key={i} className="flex flex-col border-b-2">
+            <div className="flex gap-2 items-center justify-between">
+              <h3 className="font-bold pl-4">{work.project_name}</h3>
+              <div className="border-b-2 border-l-2">
+                <Button
+                  className="w-fit rounded-none border-none"
+                  variant={'accent'}
                 >
-                  Repo <ArrowTopRightIcon />
-                </a>
-              </Button>
+                  <a
+                    href={work.repo_link}
+                    className="flex gap-2 items-center"
+                    target="_blank"
+                  >
+                    Repo <ArrowTopRightIcon />
+                  </a>
+                </Button>
+              </div>
             </div>
-            <p>{work.description}</p>
+            <p className="px-4 pb-4">{work.description}</p>
           </div>
         ))}
       </div>
 
-      <h2>Experience</h2>
-      {resume.experience.map((exp, i) => (
-        <div key={i}>
-          <h3>{exp.role}</h3>
-          <p>{exp.company}</p>
-          <p>{exp.location}</p>
-          <p>{exp.time_period}</p>
-          <p>{exp.responsibilities}</p>
+      <Heading>Experience</Heading>
+
+      <div className="p-4 border-b-2">
+        {resume.experience.map((exp, i) => (
+          <div key={i} className="pb-4">
+            <div>
+              <h3 className="font-bold text-xl">{exp.role}</h3>
+              <p className="italic">{exp.company}</p>
+              <div className="text-muted-foreground">
+                <p>{exp.location}</p>
+                <p>{exp.time_period}</p>
+              </div>
+            </div>
+            <ul className="list-disc pl-4">
+              {exp.responsibilities.map((resp, i) => (
+                <li key={i}>{resp}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <Heading>Education</Heading>
+
+      <div className="p-4 border-b-2">
+        <h3 className="text-md font-bold">{resume.education.degree}</h3>
+        <p className="italic">{resume.education.institution}</p>
+        <div className="text-muted-foreground">
+          <p>{resume.education.location}</p>
+          <p>{resume.education.time_period}</p>
         </div>
-      ))}
+      </div>
 
-      <h2>Education</h2>
-      <h3>{resume.education.degree}</h3>
-      <p>{resume.education.institution}</p>
-      <p>{resume.education.location}</p>
-      <p>{resume.education.time_period}</p>
+      <Heading>Certifications</Heading>
 
-      <h2>Certifications</h2>
-      {resume.certifications.map((cert, i) => (
-        <p key={i}>{cert}</p>
-      ))}
+      <div className="p-4">
+        <ul className="pl-4 list-disc">
+          {resume.certifications.map((cert, i) => (
+            <li key={i}>{cert}</li>
+          ))}
+        </ul>
+      </div>
     </div>
+  )
+}
+
+const Heading = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <div className="border-b-2 py-px px-4 bg-muted">
+      <h2 className="text-lg font-bold">{children}</h2>
+    </div>
+  )
+}
+
+export const ResumeSkeleton = () => {
+  return (
+    <AspectRatio ratio={6 / 8}>
+      <div className="size-full border-2 p-2 flex flex-col gap-2">
+        <div className="flex gap-2">
+          <div className="flex flex-col gap-2 w-1/2">
+            <Skeleton className="w-full h-2 rounded-none bg-border" />
+            <Skeleton className="w-full h-2 rounded-none bg-border" />
+            <Skeleton className="w-full h-2 rounded-none bg-border" />
+          </div>
+          <div className="flex flex-col gap-2 w-1/2">
+            <Skeleton className="w-full h-6 rounded-none bg-border" />
+            <Skeleton className="w-full h-6 rounded-none bg-border" />
+          </div>
+        </div>
+        <Skeleton className="w-full h-2 rounded-none bg-border" />
+        <Skeleton className="w-full h-2 rounded-none bg-border" />
+        <Skeleton className="w-full h-2 rounded-none bg-border" />
+        <Skeleton className="w-full h-2 rounded-none bg-border" />
+
+        <span className="h-6" />
+
+        <Skeleton className="w-full h-2 rounded-none bg-border" />
+        <Skeleton className="w-full h-2 rounded-none bg-border" />
+        <Skeleton className="w-full h-2 rounded-none bg-border" />
+        <Skeleton className="w-full h-2 rounded-none bg-border" />
+      </div>
+    </AspectRatio>
   )
 }

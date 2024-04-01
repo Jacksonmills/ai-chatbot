@@ -6,24 +6,16 @@ import { IconArrowRight } from '@/components/ui/icons'
 
 export function EmptyScreen() {
   return (
-    <div className="mx-auto max-w-2xl px-4">
+    <div className="mx-auto max-w-2xl px-4 pb-12">
       <div className="flex flex-col border-2 bg-background">
-        <h1 className="text-lg font-semibold p-2 m-0">
-          {`🌟 Hey there! I'm Jackson Mills 🌟`}
+        <h1 className="text-lg font-semibold p-2 m-0 bg-muted">
+          {`👋 Hey there! I'm Jackson Mills 👨‍💻`}
         </h1>
         <p className="p-2 leading-normal text-muted-foreground border-y-2">
-          {`I'm Jackson Mills, a Frontend/Fullstack Engineer with a passion for integrating modern technologies to create engaging user experiences. This project is a showcase of my skills in leveraging Next.js, the cutting-edge Vercel AI SDK, and Vercel KV for state management.`}
-        </p>
-        <p className="p-2 leading-normal text-muted-foreground border-b-2">
-          {`Utilizing React Server Components, this AI chatbot app is a testament to my ability to blend text-based interactions with dynamic, generative UI elements. The real magic happens as the UI state syncs seamlessly through the SDK, ensuring the model adapts to user interactions in real-time.`}
+          {`Crafting memorable digital experiences is my forte. As a Frontend/Fullstack Engineer rooted in Chicago, my arsenal is rich with modern tech like React, Next.js, and a flair for AI integration. I thrive on the challenge of blending user interactions with cutting-edge UI elements—making the complex feel intuitive. Whether it's leveraging the latest from Vercel or Tailwind CSS, I'm all about pushing the envelope in web development. Keen on building inclusive, engaging spaces in tech, I'm excited to bring my skills and passion to the Design Engineer role at Tailwind Labs. Let’s make something awesome together!`}
         </p>
         <p className="p-2 leading-normal text-muted-foreground">
-          {`Designed with a focus on user-centric development and the innovative
-          use of AI, this project reflects my enthusiasm for exploring new
-          frontiers in web development. I'm excited to present this as part of
-          my application for the Design Engineer role at Tailwind Labs,
-          demonstrating my commitment to pushing the boundaries of what's
-          possible with Tailwind CSS and beyond.`}
+          {`Utilizing React Server Components, this AI chatbot app is a testament to my ability to blend text-based interactions with dynamic, generative UI elements. The real magic happens as the UI state syncs seamlessly through the SDK, ensuring the model adapts to user interactions in real-time.`}
         </p>
       </div>
     </div>

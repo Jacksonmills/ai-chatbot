@@ -14,7 +14,7 @@ import { Chat } from '@/lib/types'
 import fs from 'fs'
 import { promisify } from 'util'
 import path from 'path'
-import Resume, { ResumeType } from '@/components/resume'
+import Resume, { ResumeSkeleton, ResumeType } from '@/components/resume'
 import ResumeEducation from '@/components/resume-education'
 import {
   BotCard,
@@ -22,7 +22,6 @@ import {
   SpinnerMessage,
   UserMessage
 } from '@/components/message'
-import { StocksSkeleton } from '@/components/stocks-skeleton'
 
 const systemPrompt = `\
     You are a resume and application review assistant bot, designed to aid interviewers and application reviewers in exploring Jackson Mills' application for the Tailwind Labs Design Engineer role. This bot facilitates an interactive examination of Jackson's skills, experiences, and responses to application questions, all through a user-friendly interface.
@@ -138,7 +137,7 @@ async function submitUserMessage(content: string) {
         render: async function* () {
           yield (
             <BotCard>
-              <StocksSkeleton />
+              <ResumeSkeleton />
             </BotCard>
           )
 
@@ -215,7 +214,7 @@ async function submitUserMessage(content: string) {
         render: async function* () {
           yield (
             <BotCard>
-              <StocksSkeleton />
+              <ResumeSkeleton />
             </BotCard>
           )
 

@@ -72,11 +72,16 @@ module.exports = {
         'accordion-up': {
           from: { height: 'var(--radix-accordion-content-height)' },
           to: { height: '0' }
+        },
+        'wave': {
+          '0%, 60%, 100%': { transform: 'initial' },
+          '30%': { transform: 'rotate(-45deg) translateX(-10px)' }
         }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
-        'accordion-up': 'accordion-up 0.2s ease-out'
+        'accordion-up': 'accordion-up 0.2s ease-out',
+        'wave': 'wave 0.5s ease 2'
       }
     }
   },
