@@ -423,6 +423,18 @@ export const getUIStateFromAIState = (aiState: Chat) => {
             <BotCard>
               <QuestionCard question={JSON.parse(message.content)} />
             </BotCard>
+          ) : message.name === 'showRoleExcitedQuestion' ? (
+            <BotCard>
+              <QuestionCard question={JSON.parse(message.content)} />
+            </BotCard>
+          ) : message.name === 'showOpenSourceQuestion' ? (
+            <BotCard>
+              <QuestionCard question={JSON.parse(message.content)} />
+            </BotCard>
+          ) : message.name === 'showTeachingExperienceQuestion' ? (
+            <BotCard>
+              <QuestionCard question={JSON.parse(message.content)} />
+            </BotCard>
           ) : null
         ) : message.role === 'user' ? (
           <UserMessage>{message.content}</UserMessage>
