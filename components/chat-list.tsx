@@ -15,11 +15,8 @@ export function ChatList({ messages }: ChatList) {
   return (
     <div className="relative mx-auto max-w-2xl px-4">
       {messages.map((message, index) => (
-        <div key={message.id}>
+        <div key={message.id} className="my-4 flex justify-end">
           {message.display}
-          {index < messages.length - 1 && (
-            <Separator className="my-4 h-[2px]" />
-          )}
         </div>
       ))}
     </div>

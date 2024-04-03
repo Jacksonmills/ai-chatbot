@@ -164,31 +164,36 @@ const Heading = ({ children }: { children: React.ReactNode }) => {
 
 export const ResumeSkeleton = () => {
   return (
-    <AspectRatio ratio={6 / 8}>
-      <div className="size-full border-2 p-2 flex flex-col gap-2">
-        <div className="flex gap-2">
-          <div className="flex flex-col gap-2 w-1/2">
-            <Skeleton className="w-full h-2 rounded-none bg-border" />
-            <Skeleton className="w-full h-2 rounded-none bg-border" />
-            <Skeleton className="w-full h-2 rounded-none bg-border" />
-          </div>
-          <div className="flex flex-col gap-2 w-1/2">
-            <Skeleton className="w-full h-6 rounded-none bg-border" />
-            <Skeleton className="w-full h-6 rounded-none bg-border" />
-          </div>
+    <div className="size-full border-2 p-2 flex flex-col gap-2">
+      <div className="flex gap-2">
+        <div className="flex flex-col gap-2 w-1/2">
+          <Skeleton className="w-full h-2 rounded-none bg-border" />
+          <Skeleton className="w-full h-2 rounded-none bg-border" />
+          <Skeleton className="w-full h-2 rounded-none bg-border" />
         </div>
-        <Skeleton className="w-full h-2 rounded-none bg-border" />
-        <Skeleton className="w-full h-2 rounded-none bg-border" />
-        <Skeleton className="w-full h-2 rounded-none bg-border" />
-        <Skeleton className="w-full h-2 rounded-none bg-border" />
-
-        <span className="h-6" />
-
-        <Skeleton className="w-full h-2 rounded-none bg-border" />
-        <Skeleton className="w-full h-2 rounded-none bg-border" />
-        <Skeleton className="w-full h-2 rounded-none bg-border" />
-        <Skeleton className="w-full h-2 rounded-none bg-border" />
+        <div className="flex flex-col gap-2 w-1/2">
+          <Skeleton className="w-full h-6 rounded-none bg-border" />
+          <Skeleton className="w-full h-6 rounded-none bg-border" />
+        </div>
       </div>
-    </AspectRatio>
+      <Skeleton className="w-full h-2 rounded-none bg-border" />
+      <Skeleton className="w-full h-2 rounded-none bg-border" />
+      <Skeleton className="w-full h-2 rounded-none bg-border" />
+      <Skeleton className="w-full h-2 rounded-none bg-border" />
+
+      <span className="h-2" />
+
+      <Skeleton className="w-full h-2 rounded-none bg-border" />
+      <Skeleton className="w-full h-2 rounded-none bg-border" />
+      <Skeleton className="w-full h-2 rounded-none bg-border" />
+      <Skeleton className="w-full h-2 rounded-none bg-border" />
+
+      <span className="h-2" />
+
+      <Skeleton className="w-full h-2 rounded-none bg-border" />
+      <Skeleton className="w-full h-2 rounded-none bg-border" />
+      <Skeleton className="w-full h-2 rounded-none bg-border" />
+      <Skeleton className="w-full h-2 rounded-none bg-border" />
+    </div>
   )
 }

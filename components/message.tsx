@@ -33,7 +33,7 @@ export function BotMessage({
     <div className={cn('group relative flex items-start', className)}>
       <div className="flex-1 space-y-2 overflow-hidden px-1">
         <MemoizedReactMarkdown
-          className="prose break-words dark:prose-invert prose-p:leading-relaxed prose-pre:p-0"
+          className="prose break-words text-foreground dark:prose-invert prose-p:leading-relaxed prose-pre:p-0"
           remarkPlugins={[remarkGfm, remarkMath]}
           components={{
             p({ children }) {
@@ -86,7 +86,7 @@ export function BotCard({
   showAvatar?: boolean
 }) {
   return (
-    <div className="group relative flex items-start">
+    <div className="group relative flex items-start w-full">
       <div className="flex-1">{children}</div>
     </div>
   )
@@ -105,11 +105,5 @@ export function SystemMessage({ children }: { children: React.ReactNode }) {
 }
 
 export function SpinnerMessage() {
-  return (
-    <div className="group relative flex items-start">
-      <div className="h-[24px] flex flex-row items-center flex-1 space-y-2 overflow-hidden px-1">
-        {spinner}
-      </div>
-    </div>
-  )
+  return <div className="group relative flex items-start">{spinner}</div>
 }
